@@ -31,9 +31,11 @@ public class MainActivity extends AppCompatActivity {
                 int idEvolucao = Integer.parseInt(urlEspecie[urlEspecie.length - 1]);
                 Log.d("Evolucao", String.valueOf(idEvolucao));
                 PokemonEvolution evolucaoPokemon = app.getPokemonRepo().buscaEvolucao(idEvolucao);
-                for(PokemonEvolution evo : evolucaoPokemon.chain.evolves_to){
+                for(Evolution evo : evolucaoPokemon.chain.evolves_to){
                     evo.species.name
-                        for(evo.evolves_to)
+                        for(Evolution evo2 : evo.evolves_to){
+                        evo2.species.name
+                        }
                 }
 
             } catch (IOException e) {
